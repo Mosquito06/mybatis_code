@@ -16,9 +16,6 @@ import kr.or.dgit.mybatis_code.dto.Student;
 public class StudentServiceTest {
 	private static StudentService studentService;
 	
-	
-	
-	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		studentService = new StudentService();
@@ -53,7 +50,7 @@ public class StudentServiceTest {
 		std.setStudId(2);
 				
 		studentService.selectStudentByNo(std.getStudId());
-		Assert.assertEquals(1, std.getStudId());
+		Assert.assertEquals(2, std.getStudId());
 	}
 	
 	@Test
