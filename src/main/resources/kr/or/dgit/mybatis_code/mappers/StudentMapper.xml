@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.or.dgit.mybatis_code.dao.StudentDao">
+	<select id="findAllStudents" resultType="Student">
+		select stud_id as stud_Id, name, email, dob from student
+		<!-- id는 호출하는 명령문, resultType은 리턴타입이다. select 태그 사이에 sql 문을 작성한다 -->
+		<!-- mybatis-config.xml의 typeAlias부분에 dto인 Student의 위치를 지정해 두었고, alias(별명)을 작성해두어서 resultType에 Student가 등장함 -->
+	</select> 
+	<insert id="insertStudent" parameterType="Student">
+		insert into student(name, email, dob) values(#{name}, #{email}, #{dob})
+	</insert>
+	<select id="findStudentById" parameterType="int" resultType="Student">
+		select stud_id as stud_Id, name, email, dob from student where stud_id = #{studId}	
+	</select>
+	<delete id="deleteStudent" parameterType="int">
+		delete from student where stud_id = #{studId}
+	</delete>
+	
+</mapper>
