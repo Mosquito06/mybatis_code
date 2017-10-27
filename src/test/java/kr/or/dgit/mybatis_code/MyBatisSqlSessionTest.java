@@ -1,9 +1,6 @@
 package kr.or.dgit.mybatis_code;
 
-import java.util.List;
-
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
