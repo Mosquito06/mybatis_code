@@ -3,6 +3,10 @@
 <configuration>
 	<properties resource="application.properties" />
 	
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>	
+	
 	<typeAliases>
 		<typeAlias type="kr.or.dgit.mybatis_code.dto.Student" alias="Student" /> <!-- alias는 별명임 -->
 		<!-- <package name="kr.or.dgit.mybatis_code.dto" /> --> <!-- package로 경로 지정 시 별도로 지정해주지 않아도 됨 -->
@@ -19,6 +23,8 @@
 		</environment>
 	</environments>
 	<mappers>
+		<!-- resource를 이용한 경우 -->
 		<mapper resource="kr/or/dgit/mybatis_code/mappers/studentMapper.xml" /> <!-- 실제 mapper파일이 있는 위치 -->
+
 	</mappers>
 </configuration>

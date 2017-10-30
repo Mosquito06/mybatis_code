@@ -10,7 +10,7 @@
 		insert into student(name, email, dob) values(#{name}, #{email}, #{dob})
 	</insert>
 	<select id="findStudentById" parameterType="int" resultType="Student">
-		select stud_id as stud_Id, name, email, dob from student where stud_id = #{studId}	
+		select stud_id, name, email, dob from student where stud_id = #{studId}	
 	</select>
 	<delete id="deleteStudent" parameterType="int">
 		delete from student where stud_id = #{studId}
