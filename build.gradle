@@ -1,5 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 
 sourceCompatibility = 1.8
 
@@ -29,3 +30,20 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+// jar 파일로 저장할 때는 아래 옵션이 필요함(위 apply plugin에 application을 추가해줘야함)
+jar{
+    version = 1.0
+ 	// application으로 개발 할 경우(apply plugin: 'application') main() 메소더가 있는 클래스를 반드시 지정
+    mainClassName='kr.or.dgit.mybatis_code.dao.test'
+	
+	// jar 파일 명을 지정할 수 있음
+	baseName='test'
+ 	appendix='bin'
+ 	
+ 	manifest{
+ 		 attributes 'Title':baseName, 'Version':version, 'Main-Class':mainClassName
+ 	}
+	
+	dependsOn configurations.runtime
+
+ }
